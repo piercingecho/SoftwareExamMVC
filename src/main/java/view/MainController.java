@@ -3,30 +3,43 @@ package view;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
+
 import model.CalcModel;
 import model.Operation;
 
 public class MainController
 {
+    @FXML
+    private Button AddBtn;
 
-	@FXML
-	private ListView<Operation> HistoryView;
+    @FXML
+    private Button DivideButton;
 
-	@FXML
-	private TextField NumOneTF;
+    @FXML
+    private ListView<Operation> HistoryView;
 
-	@FXML
-	private TextField NumTwoTF;
+    @FXML
+    private Button MultiplyBtn;
 
-	@FXML
-	private Label ResultLabel;
-	
+    @FXML
+    private TextField NumOneTF;
+
+    @FXML
+    private TextField NumTwoTF;
+
+    @FXML
+    private Label ResultLabel;
+
+    @FXML
+    private Button SubBtn;
+    
 	private CalcModel model;
 	
 	public void setModel(CalcModel model) 
@@ -66,7 +79,7 @@ public class MainController
 	@FXML
     void onDivideButton(ActionEvent event) 
 	{
-		model.multiply();
+		model.divide();
     }
 
 	

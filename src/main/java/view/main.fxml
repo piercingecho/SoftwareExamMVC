@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="326.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainController">
+<BorderPane prefHeight="326.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainController">
    <top>
       <Label text="Miraculous Calculator" BorderPane.alignment="CENTER">
          <font>
@@ -24,22 +24,22 @@
          <right>
             <VBox prefHeight="200.0" prefWidth="64.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onAddButton" prefHeight="64.0" prefWidth="64.0" text="+">
+                  <Button id="AddBtnCSS" fx:id="AddBtn" mnemonicParsing="false" onAction="#onAddButton" prefHeight="64.0" prefWidth="64.0" text="+">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSubButton" prefHeight="64.0" prefWidth="64.0" text="-" textAlignment="JUSTIFY">
+                  <Button id="SubBtnCSS" fx:id="SubBtn" alignment="CENTER" mnemonicParsing="false" onAction="#onSubButton" prefHeight="64.0" prefWidth="64.0" text="-" textAlignment="JUSTIFY">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#onMultiplyButton" prefHeight="64.0" prefWidth="64.0" text="*">
+                  <Button id="MultiplyBtnCSS" fx:id="MultiplyBtn" mnemonicParsing="false" onAction="#onMultiplyButton" prefHeight="64.0" prefWidth="64.0" text="*">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#onDivideButton" prefHeight="64.0" prefWidth="64.0" text="/">
+                  <Button id="DivideBtnCSS" fx:id="DivideButton" mnemonicParsing="false" onAction="#onDivideButton" prefHeight="64.0" prefWidth="64.0" text="/">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -53,12 +53,12 @@
                   <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
                         <Region prefHeight="200.0" prefWidth="100.0" />
-                        <TextField fx:id="NumOneTF" onMousePressed="#onNumOnePressed" prefHeight="51.0" prefWidth="124.0">
+                        <TextField id="NumOneTFCSS" fx:id="NumOneTF" onMousePressed="#onNumOnePressed" prefHeight="51.0" prefWidth="124.0">
                            <font>
                               <Font size="24.0" />
                            </font></TextField>
                         <Region prefHeight="200.0" prefWidth="200.0" />
-                        <TextField fx:id="NumTwoTF" onMouseClicked="#onNumTwoPressed" prefHeight="51.0" prefWidth="124.0">
+                        <TextField id="NumTwoTFCSS" fx:id="NumTwoTF" onMouseClicked="#onNumTwoPressed" prefHeight="51.0" prefWidth="124.0">
                            <font>
                               <Font size="24.0" />
                            </font></TextField>
@@ -70,7 +70,7 @@
                   </HBox>
                </top>
                <center>
-                  <Label fx:id="ResultLabel" text="0" BorderPane.alignment="CENTER">
+                  <Label id="ResultLabelCSS" fx:id="ResultLabel" text="0" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="76.0" />
                      </font>
@@ -88,7 +88,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ListView fx:id="HistoryView" prefHeight="200.0" prefWidth="139.0" />
+            <ListView id="HistoryViewCSS" fx:id="HistoryView" prefHeight="200.0" prefWidth="139.0" />
          </children>
          <BorderPane.margin>
             <Insets left="15.0" />

@@ -17,15 +17,6 @@ class TestCalcModel
 	{
 	}
 	
-	@Test
-	void testOperationToString()
-	{
-		Operation operation = new Operation(6, " + ", 4, 10);
-		assertEquals(operation.toString(), "6.0 + 4.0 = 10.0");
-		operation = new Operation(5.3, " / ", -4.5, (5.3/-4.5));
-		assertEquals(operation.toString(), "5.3 / -4.5 = " + Double.toString(5.3/-4.5));
-	}
-	
 	void setNums(CalcModel calc, double numone, double numtwo)
 	{
 		calc.setNum1(new SimpleDoubleProperty(numone));
@@ -56,6 +47,20 @@ class TestCalcModel
 			  assertEquals(firstOp, secondOp);
 		  }
 	  }
+
+	
+	//tests
+	
+	
+	@Test
+	void testOperationToString()
+	{
+		Operation operation = new Operation(6, " + ", 4, 10);
+		assertEquals(operation.toString(), "6.0 + 4.0 = 10.0");
+		operation = new Operation(5.3, " / ", -4.5, (5.3/-4.5));
+		assertEquals(operation.toString(), "5.3 / -4.5 = " + Double.toString(5.3/-4.5));
+	}
+	
 
 	@Test
 	void testCalcModel()
@@ -108,6 +113,10 @@ class TestCalcModel
 		calc.setResult(new SimpleDoubleProperty(100)); //should NOT affect the operation!
 		
 		calc.add();
+		
+		setNums(calc,5,0);
+		calc.divide(); //should NOT add to operation
+		assertEquals(0, calc.getResult().get());
 		
 		ObservableList<Operation> expectedList = FXCollections.observableArrayList();
 		expectedList.add(new Operation(5, " + ", -3, -2));
